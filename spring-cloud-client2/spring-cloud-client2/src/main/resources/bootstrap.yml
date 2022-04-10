@@ -1,0 +1,33 @@
+my:
+  greeting: Hello world
+  list:
+    values: one, two, three, four
+    
+spring.cloud.config.uri: http://localhost:8080
+
+spring.application.name: spring-cloud-client2
+
+server.contextPath: /mainstay
+
+server.port: 8095
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+        
+db:
+  connection: {url: 'http://', username: 'guest', password: 'guest'}
+  host: 127.0.0.1
+  port: 8095
+   
+          
+    
+        
