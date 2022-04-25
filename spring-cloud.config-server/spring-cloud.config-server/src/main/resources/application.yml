@@ -15,16 +15,27 @@ spring:
         git :
           uri: https://github.com/marslinvijay/config-repo.git
 ---
+#spring:
+#  profiles: config-monitor
+#  cloud:
+#    bus:
+#      enabled: true
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+    
+---
 spring:
   profiles: config-monitor
-  cloud:
+  cloud: 
     bus:
       enabled: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  kafka:   
+      bootstrap-servers: localhost:9092
+      #key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      #value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 management:
   endpoints:
